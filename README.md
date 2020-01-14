@@ -3,7 +3,6 @@
 ### Collaborators
 Andrew Eckes, Paula Caudilla, Cherie Mosher
 
-
 ## Project Topic
 
 How are the numerous wildfires in Australia effecting the many native and endangered animals of Australia?
@@ -42,4 +41,8 @@ Under construction
 
 ## OPTIONAL Work load organization
 
-Under construction
+Andrew - Develop website with map
+
+Paula - Create file(s) of fire data
+
+Cherie - Research species to include and develop API calls for occurrence data
