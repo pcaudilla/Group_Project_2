@@ -18,9 +18,9 @@
   };
 
   // Create an overlayMaps object to hold the fire layer
-  var overlayMaps = {
-    "Fires": fireLayer
-  };
+  //var overlayMaps = {
+  //  "Fires": fireLayer
+  //};
 
   // Create the map object with options
 
@@ -29,4 +29,18 @@
 
 
 
-d3.read_csv()
+d3.csv(dataPath, function(data) {
+  data.forEach(function(d) {
+    d.latitude = +d.latitude;
+    d.longitude = +d.longitude;
+    d.bright_ti4 = +d.bright_ti4
+    d.scan = +d.scan
+    d.track = +d.track
+    d.acq_date = +d.acq_date
+    d.acq_time = +d.acq_time
+    d.bright_ti5 = +d.bright_ti5
+    d.frp = +d.frp
+
+  });
+  console.log(data);
+});
