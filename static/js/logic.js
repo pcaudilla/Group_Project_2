@@ -1,4 +1,4 @@
-function createMap(fireLayer) {
+function createMap(speciesLayer) {
 
 // tile layer
   var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}", {
@@ -8,20 +8,50 @@ function createMap(fireLayer) {
     accessToken: API_KEY
   });
 
+  var cfg = {
+    // radius should be small ONLY if scaleRadius is true (or small radius is intended)
+    // if scaleRadius is false it will be the constant radius used in pixels
+    "radius": 2,
+    "maxOpacity": .8,
+    // scales the radius based on map zoom
+    "scaleRadius": true,
+    // if set to false the heatmap uses the global maximum for colorization
+    // if activated: uses the data maximum within the current map boundaries
+    //   (there will always be a red spot with useLocalExtremas true)
+    "useLocalExtrema": true,
+    // which field name in your data represents the latitude - default "lat"
+    latField: 'Latitude',
+    // which field name in your data represents the longitude - default "lng"
+    lngField: 'Longitude',
+    // which field name in your data represents the data value - default "value"
+    valueField: 'count'
+  };
+
+  var heatMapLayer = HeatmapOverlay(cfg);
+
+  d3.csv(firePath, function(data) {
+    data.forEach(function(d) {
+      d.latitude = +d.latitude;
+      d.longitude = +d.longitude;
+    });
+    heatMapLayer.setData(data)
+  });
   // Create a baseMaps object to hold the lightmap layer
   var baseMaps = {
     "Light Map": lightmap
   };
 
-  // Create an overlayMaps object to hold the fire layer
+  // Create an overlayMaps object to hold the species layer
   var overlayMaps = {
-   "Fires": fireLayer
+   "Species": speciesLayer,
+   "Fires": heatMapLayer
   };
+
 
   var map = L.map("map-id", {
     center: [-35.8177,137.05305],
     zoom: 10,
-    layers: [lightmap, fireLayer]
+    layers: [lightmap, heatMapLayer, speciesLayer]
   });
 
   L.control.layers(baseMaps, overlayMaps, {
@@ -31,27 +61,22 @@ function createMap(fireLayer) {
 };
 
 
-function createFireMarkers(data) {
-  var firePoints = [];
-
-  //var coords = data.latitude
+function createSpeciesLayer(data) {
+  var obsPoints = [];
 
   for (var i = 0; i < data.length; i++){
     var lat = data[i].Latitude;
     var lon = data[i].Longitude;
-    //var brightness = data[i].bright_ti4;
-
-    var firePoint = L.marker([lat, lon]);
-    //console.log(data[i].latitude)
-    //console.log(data[i].longitude)
-    firePoints.push(firePoint);
-    
+    var point = L.marker([lat, lon]);
+    obsPoints.push(point);
   };
-  createMap(L.layerGroup(firePoints));
+
+  createMap(L.layerGroup(obsPoints));
+
 };
 
 
-d3.csv(dataPath2, function(data) {
+d3.csv(speciesPath, function(data) {
   data.forEach(function(d) {
     d.latitude = +d.Latitude;
     d.longitude = +d.Longitude;
@@ -63,8 +88,8 @@ d3.csv(dataPath2, function(data) {
     // d.bright_ti5 = +d.bright_ti5
     // d.frp = +d.frp
 
-
-
   });
-  createFireMarkers(data);
+
+  createSpeciesLayer(data);
+
 });
