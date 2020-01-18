@@ -37,9 +37,9 @@ function createFireMarkers(data) {
   //var coords = data.latitude
 
   for (var i = 0; i < data.length; i++){
-    var lat = data[i].latitude;
-    var lon = data[i].longitude;
-    var brightness = data[i].bright_ti4;
+    var lat = data[i].Latitude;
+    var lon = data[i].Longitude;
+    //var brightness = data[i].bright_ti4;
 
     var firePoint = L.marker([lat, lon]);
     //console.log(data[i].latitude)
@@ -51,17 +51,19 @@ function createFireMarkers(data) {
 };
 
 
-d3.csv(dataPath, function(data) {
+d3.csv(dataPath2, function(data) {
   data.forEach(function(d) {
-    d.latitude = +d.latitude;
-    d.longitude = +d.longitude;
-    d.bright_ti4 = +d.bright_ti4
-    d.scan = +d.scan
-    d.track = +d.track
-    d.acq_date = +d.acq_date
-    d.acq_time = +d.acq_time
-    d.bright_ti5 = +d.bright_ti5
-    d.frp = +d.frp
+    d.latitude = +d.Latitude;
+    d.longitude = +d.Longitude;
+    // d.bright_ti4 = +d.bright_ti4
+    // d.scan = +d.scan
+    // d.track = +d.track
+    // d.acq_date = +d.acq_date
+    // d.acq_time = +d.acq_time
+    // d.bright_ti5 = +d.bright_ti5
+    // d.frp = +d.frp
+
+
 
   });
   createFireMarkers(data);
