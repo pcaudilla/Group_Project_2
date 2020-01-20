@@ -96,7 +96,7 @@
             progressline: true,
             navwidget: true,
             createMap: function () {
-                var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([44, -120], 7);
+                var map = L.map($(".storymap-map")[1], {zoomControl: false}).setView([44, -120], 7);
                 basemap = this.baselayer.layer.addTo(map);
                 return map;
             }
