@@ -39,7 +39,7 @@ function createMap(speciesLayer, speciesName) {
 
       var latlng = L.latLng([lat, lng]);
       heatArray.push(latlng);
-
+      
     };
     
 
