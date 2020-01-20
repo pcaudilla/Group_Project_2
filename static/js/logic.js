@@ -1,5 +1,5 @@
 
-var speciesPath = 'static/data/species_locations/varanus.csv';
+var speciesPath = 'static/data/species_locations/kangaroo.csv';
 
 function createMap(speciesLayer, speciesName) {
   var heatMapLayer;
@@ -68,12 +68,18 @@ function createMap(speciesLayer, speciesName) {
 
 function createSpeciesLayer(data) {
 
+  var speciesIcon = L.icon({
+    iconUrl: '../../images/kangaroo_icon.png',
+    iconSize: [48, 68],
+    iconAnchor: [24, 0]
+  })
+
   var obsPoints = [];
 
   for (var i = 0; i < data.length; i++) {
     var lat = data[i].Latitude;
     var lng = data[i].Longitude;
-    var point = L.marker([lat, lng]);
+    var point = L.marker([lat, lng], {icon: speciesIcon});
     obsPoints.push(point);
   };
 
