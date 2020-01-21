@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Endangered Species on Kangaroo Island, Australia</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--add required stylesheets-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <!--leaflet css-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-        <!--add favicon for the web page-->
-        <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    
-        <!--Font-->
-        <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-    
-        <link rel="stylesheet" type="text/css" href="storymap.2.5.css">
-    
-        <!--add required libraries-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-        <!--jquery and Popper-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    
-        <!--boostrap-->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <!--leaflet.ajax for asynchronously adding geojson data-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-    
-        <!--story map plugin-->
-        <script src="storymap.2.5.js"></script>
+    <title>Endangered Species on Kangaroo Island, Australia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--add required stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--leaflet css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!--add favicon for the web page-->
+    <!--link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon"-->
+
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="storymap.MOSHER.css">
+
+    <!--add required libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <!--jquery and Popper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!--boostrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--leaflet.ajax for asynchronously adding geojson data-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+
+    <!--story map plugin-->
+    <script src="storymap.MOSHER.js"></script>  
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+    
     <div id="storymap" class="container-fluid">
         <div class="row">
             <div class="col-sm-6 col-md-8 storymap-map"></div>
@@ -56,16 +63,14 @@
                         <br>
                         <br>
                         There are 6 amphibian, 20 reptile, 25 non-marine mammal, and 267 bird species.
-                        </section>
-                <section data-scene="scene4">
-                    <h2>Kangaroo Island Wildfires</h2>
-                    <br>
-                    <h5>A third of Kangaroo Island has been burned by wildfire.  The following is a story of 4 species whose habitats are affected by the wildfires.</h5>
+                        <br>  
+                        <br>
+                        A third of Kangaroo Island has been burned by wildfire.  The following is a story of 4 species whose habitats are affected by the wildfires.</h5>
                 </section>
-                <section data-scene="scene5">
+                <section data-scene="scene4">
                     <h2>Coastal White Mallee</h2>
                     <br>
-                    <h5>The coastal white mallee (Eucalyptus diversifolia) was one of the most dominant plant species during the 1989 species survey.  Mallee is a term for eucalyptus trees that are multi-stemmed.  
+                    <h5>The coastal white mallee (Eucalyptus diversifolia) was one of the most dominant plant species during the 1989 species surveys.  Mallee is a term for eucalyptus trees that are multi-stemmed.  
                         <br>
                         <br>
                         The coastal white mallee grows in dense patches and provides shelter for other native plants.  
@@ -73,7 +78,7 @@
                         <br>
                         High intensity and frequent bushfires create conditions favorable to weed and rabbit invasion in mallee forest stands.</h5>
                 </section>
-                <section data-scene="scene6">
+                <section data-scene="scene5">
                     <h2>Mound-building Termites</h2>
                     <br>
                     <h5>There are approximately 300 species of termite in Australia (most don't eat houses).  The snouted termite species, Nasutitermes exitiosus, builds dome-shaped mounds that are 30-75 cm high.     
@@ -84,7 +89,7 @@
                         <br>
                         NOTE: the database did not have many observations of this species.  The points may not reflect their overall distribution on the island.</h5>
                 </section>
-                <section data-scene="scene7">
+                <section data-scene="scene6">
                     <h2>Kangaroo Island Echidna</h2>
                     <br>
                     <h5>The Kangaroo Island echidna (Tachyglossus aculeatus ssp. multiaculeatus) is a subspecies of the short-beaked echidna.  Short-beaked echidnas typically eat termites, as well as other insects.  
@@ -98,7 +103,7 @@
                         <br>
                         Puggles can sometimes be found in the same termite mounds as the eggs and hatchlings of the Rosenberg's monitor.</h5>
                 </section>
-                <section data-scene="scene8">
+                <section data-scene="scene6">
                     <h2>Rosenberg's Monitor</h2>
                     <br>
                     <h5>Termite mounds are critical for the Rosenberg's goanna (Varanus rosenbergi) as females lay their eggs in the mounds (the young dig themselves out).  
@@ -109,7 +114,7 @@
                         <br>
                         This species was declining on mainland Australia before this wildlife season.  Kangaroo Island is/was their last stronghold.</h5>
                 </section>
-                <section data-scene="scene9">
+                <section data-scene="scene7">
                     <h2>What can I do?</h2>
                     <br>
                     <h5>Recognize the importance of whole ecosystem health.  Species rely on other species to survive, and entire ecosystems need our support. 
@@ -154,9 +159,7 @@
             scene4: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 4"},
             scene5: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 5"},
             scene6: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 6"},
-            scene7: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 7"},
-            scene8: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 7"},
-            scene9: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 7"}
+            scene7: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 7"}
         };
     
         $('#storymap').storymap({
@@ -178,5 +181,6 @@
         });
 
     </script>
+
 </body>
 </html>
