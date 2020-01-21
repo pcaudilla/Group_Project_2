@@ -6,8 +6,8 @@ function createMap(speciesLayer, speciesName) {
   // tile layer
   var baseLayer = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
-    maxZoom: 50,
-    id: "mapbox.streets",
+    maxZoom: 20,
+    id: "mapbox.outdoors",
     accessToken: API_KEY
   });
 
@@ -44,8 +44,8 @@ function createMap(speciesLayer, speciesName) {
     
 
     heatMapLayer = L.heatLayer(heatArray, {
-      radius: 10,
-      blur: 5,
+      radius: 8,
+      blur: 10,
       minOpacity: 2,
       maxZoom: 20,
       gradient: {
@@ -73,13 +73,17 @@ function createSpeciesLayer(data) {
     iconAnchor: [0, 0]
   })
 
-  var obsMarkerClusters = L.markerClusterGroup();
+  var obsMarkerClusters = L.markerClusterGroup({
+    disableClusteringAtZoom: 13,
+    maxClusterRadius: 200
+  });
 
   for (var i = 0; i < data.length; i++) {
     var lat = data[i].Latitude;
     var lng = data[i].Longitude;
     var point = L.marker([lat, lng]); //{icon: speciesIcon}
-    obsMarkerClusters.addLayer(point);
+    obsMarkerClusters.addLayer(point)
+      .bindPopup(`<strong>Year Observed: ${data[i].Year}</strong><br>Credit: ${data[i].Collector}`);
   };
 
   var speciesName = data[0].Species;
