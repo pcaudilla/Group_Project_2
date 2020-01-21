@@ -41,7 +41,6 @@ function createMap(speciesLayer, speciesName) {
       heatArray.push(latlng);
       
     };
-    
 
     heatMapLayer = L.heatLayer(heatArray, {
       radius: 8,
@@ -64,13 +63,11 @@ function createMap(speciesLayer, speciesName) {
 
 };
 
-
 function createSpeciesLayer(data) {
 
   var speciesIcon = L.icon({
-    iconUrl: '../../images/kangaroo_icon.png',
-    iconSize: [48, 68],
-    iconAnchor: [0, 0]
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png'
+
   })
 
   var obsMarkerClusters = L.markerClusterGroup({
@@ -81,9 +78,9 @@ function createSpeciesLayer(data) {
   for (var i = 0; i < data.length; i++) {
     var lat = data[i].Latitude;
     var lng = data[i].Longitude;
-    var point = L.marker([lat, lng]); //{icon: speciesIcon}
-    obsMarkerClusters.addLayer(point)
+    var point = L.marker([lat, lng], {icon: speciesIcon})
       .bindPopup(`<strong>Year Observed: ${data[i].Year}</strong><br>Credit: ${data[i].Collector}`);
+    obsMarkerClusters.addLayer(point);
   };
 
   var speciesName = data[0].Species;
@@ -92,15 +89,12 @@ function createSpeciesLayer(data) {
 };
 
 
-
-
 d3.csv(speciesPath, function (data) {
   data.forEach(function (d) {
     d.latitude = +d.Latitude;
     d.longitude = +d.Longitude;
 
   });
-
 
   createSpeciesLayer(data);
 
