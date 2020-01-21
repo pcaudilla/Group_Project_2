@@ -6,8 +6,8 @@ function createMap(speciesLayer, speciesName) {
   // tile layer
   var baseLayer = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
     attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
-    maxZoom: 50,
-    id: "mapbox.streets",
+    maxZoom: 20,
+    id: "mapbox.outdoors",
     accessToken: API_KEY
   });
 
@@ -41,11 +41,10 @@ function createMap(speciesLayer, speciesName) {
       heatArray.push(latlng);
       
     };
-    
 
     heatMapLayer = L.heatLayer(heatArray, {
-      radius: 10,
-      blur: 5,
+      radius: 8,
+      blur: 10,
       minOpacity: 2,
       maxZoom: 20,
       gradient: {
@@ -64,21 +63,23 @@ function createMap(speciesLayer, speciesName) {
 
 };
 
-
 function createSpeciesLayer(data) {
 
   var speciesIcon = L.icon({
-    iconUrl: '../../images/kangaroo_icon.png',
-    iconSize: [48, 68],
-    iconAnchor: [0, 0]
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-grey.png'
+
   })
 
-  var obsMarkerClusters = L.markerClusterGroup();
+  var obsMarkerClusters = L.markerClusterGroup({
+    disableClusteringAtZoom: 13,
+    maxClusterRadius: 200
+  });
 
   for (var i = 0; i < data.length; i++) {
     var lat = data[i].Latitude;
     var lng = data[i].Longitude;
-    var point = L.marker([lat, lng]); //{icon: speciesIcon}
+    var point = L.marker([lat, lng], {icon: speciesIcon})
+      .bindPopup(`<strong>Year Observed: ${data[i].Year}</strong><br>Credit: ${data[i].Collector}`);
     obsMarkerClusters.addLayer(point);
   };
 
@@ -88,15 +89,12 @@ function createSpeciesLayer(data) {
 };
 
 
-
-
 d3.csv(speciesPath, function (data) {
   data.forEach(function (d) {
     d.latitude = +d.Latitude;
     d.longitude = +d.Longitude;
 
   });
-
 
   createSpeciesLayer(data);
 
