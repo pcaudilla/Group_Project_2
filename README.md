@@ -36,8 +36,8 @@ Front-end compenents html/css/js (Required)
 
 ## Sketches & Inspiration
 
-![sketch1](https://github.com/pcaudilla/Group_Project_2/images/sketch1.jpg)
-![sketch1](https://github.com/pcaudilla/Group_Project_2/images/sketch2.jpg)
+![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/sketch1.jpg)
+![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/sketch2.jpg)
 
 
 ## OPTIONAL Work load organization
