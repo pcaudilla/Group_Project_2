@@ -108,6 +108,13 @@ var layers = {
             id: "mapbox.light",
             accessToken: API_KEY
         })
+    },
+    layer4: {
+        layer: L. tileLayer(MAPBOX_URL, {
+            attribution: ATTRIBUTION,
+            id: "mapbox.satellite",
+            accessToken: API_KEY
+        })
     }
 };
 
@@ -201,7 +208,7 @@ var overlayLayers = {
 var scenes = {
     scene1: { lat: -27.274398, lng: 123.775136, zoom: 4.5, layers: [layers.layer1, overlayLayers.heatLayerAUS], name: "Australia" },
     scene2: { lat: -35.8177, lng: 137.05305, zoom: 8, layers: [layers.layer2], name: "Southern Australia" },
-    scene3: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer3, layers.layer2], name: "Kangaroo Island" },
+    scene3: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer4], name: "Kangaroo Island" },
     scene4: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer], name: "Wildfires" },
     scene5: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer], name: "Mallee" },
     scene6: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.termiteLayer], name: "Termites" },
