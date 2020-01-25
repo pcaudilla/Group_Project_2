@@ -16,18 +16,16 @@
   padding: 10px;
 }
 
+.navbar {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
 .row h2 {
   color: gray;
 }
 
-.page-footer {
-  background-color: gray;
-  color: white;
-}
-
-.navbar-brand {
-  font-size: 30px;
-}
 
 .row {
     background-color: white;
