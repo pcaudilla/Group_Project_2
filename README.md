@@ -25,25 +25,19 @@ https://www.ala.org.au/
 
 
 ## Project Track & Stack
-
-What stack components are you going for?
-Front-end compenents such as html/css/js 
-Heatmap
-Storymap library
+* Downloaded fire data CSV files (from 1/1/2019 to 1/13/2020)
+* Downloaded animal habitat CSV files from Atlas of Living Australia
+* Used Storymap library (https://github.com/jakobzhao/storymap)
+* Created heatmap for fire data and habitats for each animals, and overlayed one on tope of the other 
+* created website that tells story and a references page that has links to sources as well as places for donations
 
 
 ## Sketches & Inspiration
 
-<<<<<<< HEAD
-![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/plan_sketch.jpg)
-![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/sketch2.jpg)
-=======
-![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/sketch1.jpg)
-![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/sketch2.jpg)
+![sketch1](https://github.com/pcaudilla/Group_Project_2/blob/master/images/plan_sketch.jpg)
+![sketch1](https://github.com/pcaudilla/Group_Project_2/blob/master/images/sketch2.jpg)
 
 
-## OPTIONAL Work load organization
->>>>>>> 7ef3137adc99529be7fe1a139c1de8fe73376e2a
 
 
 
