@@ -22,27 +22,12 @@ body {
     padding: 0;
 }
 
-#info {
-    display: block;
-    position: relative;
-    margin: 0px auto;
-    width: 50%;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    font-size: 12px;
-    text-align: center;
-    color: #222;
-    background: #fff;
-    }
-
-h1 {
-    margin-top: 25%;
-    font-family: Cairo, sans-serif;
-    color: rgba(255, 255, 255, 0.95);
-    font-size: 4vw;
-    text-shadow: 0 0 6px rgba(0, 0, 0, .95);
-}
+.navbar {
+    padding-top: 22px;
+    padding-bottom: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 30px;
 
 h2 {
     font-weight: bold;
@@ -69,9 +54,10 @@ h2 {
     display: block;
     z-index: 1000;
     background-color: rgba(238, 238, 238, 0);
+}
 
-
-
+.first_scene {
+    padding-top: 80px;
 }
 
 .storymap-map {
@@ -99,6 +85,7 @@ h2 {
 
     .storymap-story {
         width: 100%;
+        padding-top: 45px;
     }
 
     .storymap-map {
