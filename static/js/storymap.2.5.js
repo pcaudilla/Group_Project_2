@@ -1,3 +1,5 @@
+// Story map library javascript
+
 (function ($) {
 
     $.fn.autoplay = function (options){
@@ -39,7 +41,6 @@
             mapinteraction: false,
             createMap: function () {
                 var map = L.map($('.storymap-map')[0], {zoomControl: false}).setView([44, -120], 7);
-                // L.tileLayer('http://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}@2x.png').addTo(map);
                 return map;
             }
         };
@@ -92,11 +93,6 @@
                 if (section[0] !== closest.el[0]) {
                     section.trigger('notviewing');
                 }
-
-                // if (section.height() <= $(window).height() * 0.33 ) {
-                //     section.height($(window).height() * 0.33)
-                // }
-
 
                 if (section.height() <= $(window).height() * 0.33 && section.has("img").length === 0) {
                     section.height($(window).height() * 0.33)
@@ -216,9 +212,6 @@
 
 
 
-               //$(".navbar-header").after("<div class='collapse navbar-collapse nav navbar-nav navbar-right storymap-navbar'>");
-
-
                 $.each(sections, function (key, element) {
                     var section = $(element);
                     // if no name attribute for a specific scene, the name on the navigation bar will be the object name.
@@ -229,8 +222,6 @@
                     }
 
                     scrollScript = "javascript:window.scrollBy(0, $('section[data-scene=\\'" + section.data('scene') + "\\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);";
-
-                    // $(".storymap-navbar").append('<li><a title="' + sceneName + '" href="' + scrollScript + '" >' + sceneName + '</a></li>');
 
 
                     $(".navbar-nav").append('<li class="nav-item"><a class="nav-link"' + '" href="' + scrollScript + '" >' + sceneName + '</a></li>');

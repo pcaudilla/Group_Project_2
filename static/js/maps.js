@@ -1,3 +1,4 @@
+// Create variables to hold location data for the various layers
 var heatArray = [];
 var heatArrayAUS = [];
 var malleeArray = [];
@@ -5,6 +6,7 @@ var echidnaArray = [];
 var termiteArray = [];
 var varanusArray = [];
 
+// Pull lat and long data from the dataset of fires for all of Australia.  Push to heatArrayAUS.
 d3.csv(firePathAUS, function (data) {
 
     for (var i = 0; i < data.length; i++) {
@@ -17,7 +19,7 @@ d3.csv(firePathAUS, function (data) {
     }
 });
 
-
+// Pull lat and long data from the dataset of fires for Kangaroo Island.  Push to heatArray.
 d3.csv(firePath, function (data) {
 
     for (var i = 0; i < data.length; i++) {
@@ -31,6 +33,7 @@ d3.csv(firePath, function (data) {
 
 });
 
+// Pull lat and long data for mallee observations.  Push to malleeArray.  
 d3.csv(malleeObs, function (data) {
 
     for (var i = 0; i < data.length; i++) {
@@ -44,6 +47,7 @@ d3.csv(malleeObs, function (data) {
 
 });
 
+// Pull lat and long data for termite mound observations.  Push to termiteArray.
 d3.csv(termiteObs, function (data) {
 
     for (var i = 0; i < data.length; i++) {
@@ -57,7 +61,7 @@ d3.csv(termiteObs, function (data) {
 
 });
 
-
+// Pull lat and long data for echidna observations.  Push to echidnaArray.
 d3.csv(echidnaObs, function (data) {
 
     for (var i = 0; i < data.length; i++) {
@@ -71,7 +75,7 @@ d3.csv(echidnaObs, function (data) {
 
 });
 
-
+// Pull lat and long data for goanna observations.  Push to varanusArray.
 d3.csv(varanusObs, function (data) {
 
     for (var i = 0; i < data.length; i++) {
@@ -86,7 +90,7 @@ d3.csv(varanusObs, function (data) {
 });
 
 
-
+// Add map layers to an object that the story map will move through during scrolling.
 var layers = {
     layer1: {
         layer: L.tileLayer(MAPBOX_URL, {
@@ -118,6 +122,8 @@ var layers = {
     }
 };
 
+// Add overlay layers to an object that the story map will include when required.
+// Include legends based on the data that is on the map.
 var overlayLayers = {
     heatLayer: {
 
@@ -204,7 +210,7 @@ var overlayLayers = {
     },
 };
 
-
+// Tell story map the zoom level and the layers included based on the map that is on screen.
 var scenes = {
     scene1: { lat: -27.274398, lng: 123.775136, zoom: 4.5, layers: [layers.layer1, overlayLayers.heatLayerAUS], name: "Australia" },
     scene2: { lat: -35.8177, lng: 137.05305, zoom: 8, layers: [layers.layer2], name: "Southern Australia" },
@@ -216,8 +222,9 @@ var scenes = {
     scene8: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.varanusLayer], name: "Goanna" },
     scene9: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer,overlayLayers.termiteLayer,overlayLayers.echidnaLayer,overlayLayers.varanusLayer], name: "scene 7" }
 
-};          
+};  
 
+// Story map settings.
 $('#storymap').storymap({
     scenes: scenes,
     baselayer: layers.layer1,
