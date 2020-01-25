@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <title>Endangered Species on Kangaroo Island, Australia</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!--add required stylesheets-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <!--leaflet css-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
-        <!--add favicon for the web page-->
-        <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
-    
-        <!--Font-->
-        <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
-    
-        <link rel="stylesheet" type="text/css" href="static/css/storymap.2.5.css">
-    
-        <!--add required libraries-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
-        <!--jquery and Popper-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    
-        <!--boostrap-->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <!--leaflet.ajax for asynchronously adding geojson data-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
-    
-        <!--story map plugin-->
+    <title>Wildfires and Wildlife on Kangaroo Island, Australia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--add required stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!--leaflet css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <!--add favicon for the web page-->
+    <link rel="shortcut icon" href="../../img/favicon.ico" type="image/x-icon">
+
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="static/css/storymap.2.5.css">
+
+    <!--add required libraries-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+    <!--jquery and Popper-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+
+    <!--boostrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!--leaflet.ajax for asynchronously adding geojson data-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+    <!--story map plugin-->
+    <script type="text/javascript" src="static/js/storymap.2.5.js"></script>
 </head>
 
 <body>
-  <div id="app" class="container">
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark storymap-navbar">
-   
-        <a class="navbar-brand" href="#">The Story of Kangaroo Island</a> 
+    <header id="app" class="container">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark storymap-navbar">
+    
+            <a class="navbar-brand" href="#">A Story of Wildfires and Wildlife</a> 
 
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="javascript:window.scrollBy(0, $('section[data-scene=\'scene1\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);">Australia Fires</a></li>
-                <li class="nav-item"><a class="nav-link" href="javascript:window.scrollBy(0, $('section[data-scene=\'scene2\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);">Kangaroo Island</a></li>
-                <li class="nav-item"><a class="nav-link" href="references.html">References</a></li>
-                </li>
-            </ul>
-        </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="javascript:window.scrollBy(0, $('section[data-scene=\'scene1\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);">Australia Fires</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:window.scrollBy(0, $('section[data-scene=\'scene2\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);">Kangaroo Island</a></li>
+                    <li class="nav-item"><a class="nav-link" href="references.html">References</a></li>
+                    </li>
+                </ul>
+            </div>
 
-    </nav>
-</div>
-    <div id="storymap" class="container-fluid">
+        </nav>
+    </header>
+    <main id="storymap" class="container-fluid">
         <div class="row">
             <div class="col-sm-6 col-md-8 storymap-map"></div>
             <div class="col-sm-6 col-md-4 storymap-story">
-                <section data-scene="scene1">
+                <section data-scene="scene1" class="first_scene">
                     <h2>The Australia Fires</h2>
                     <br>
                     <h5>Across Australia, at least 17.9 million acres have burned during this wildfire season.  Billions of plants and animals have been affected by the bushfires.  It is unclear how many have been killed and how many will be affected for generations.  Whole ecosystems may be permanently changed.</h5>
@@ -220,13 +220,14 @@
                         If you protect the mallee, if you protect the termite, you protect the echidna, and you protect the goanna.
                         <br>
                         <br>
-                        If you are interested in donating, we have included the links to three groups related to Kangaroo Island on the references page.</h5>
+                        If you are interested in donating, we have included the links to three groups related to Kangaroo Island on the references page.
+                    </h5>
                 </section>
             </div>
     
         </div>
-    </div>
-    <script type="text/javascript" src="static/js/storymap.2.5.js"></script>
+    </main>
+    
     <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
     <script type="text/javascript" src="static/js/config.js"></script>
     <script type="text/javascript" src="static/js/maps.js"></script>

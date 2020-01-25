@@ -92,11 +92,24 @@ var layers = {
     layer1: {
         layer: L.tileLayer(MAPBOX_URL, {
             attribution: ATTRIBUTION,
-            id: "mapbox.streets",
+            id: "mapbox.light",
             accessToken: API_KEY
         })
     },
-    
+    layer2: {
+        layer: L. tileLayer(MAPBOX_URL, {
+            attribution: ATTRIBUTION,
+            id: "mapbox.light",
+            accessToken: API_KEY
+        })
+    },
+    layer3: {
+        layer: L. tileLayer(MAPBOX_URL, {
+            attribution: ATTRIBUTION,
+            id: "mapbox.light",
+            accessToken: API_KEY
+        })
+    }
 };
 
 var overlayLayers = {
@@ -181,20 +194,20 @@ var overlayLayers = {
 
 
 var scenes = {
-    scene1: { lat: -25.274398, lng: 133.775136, zoom: 4.5, layers: [layers.layer1, overlayLayers.heatLayerAUS], name: "Australia" },
-    scene2: { lat: -35.8177, lng: 137.05305, zoom: 8, layers: [layers.layer1], name: "Southern Australia" },
-    scene3: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1], name: "Kangaroo Island" },
-    scene4: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer], name: "Wildfires" },
-    scene5: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer], name: "Mallee" },
-    scene6: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.termiteLayer], name: "Termites" },
-    scene7: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.echidnaLayer], name: "Echidna" },
-    scene8: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.varanusLayer], name: "Goanna" },
-    scene9: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer,overlayLayers.termiteLayer,overlayLayers.echidnaLayer,overlayLayers.varanusLayer], name: "scene 7" }
+    scene1: { lat: -27.274398, lng: 123.775136, zoom: 4.5, layers: [layers.layer2, overlayLayers.heatLayerAUS], name: "Australia" },
+    scene2: { lat: -35.8177, lng: 137.05305, zoom: 8, layers: [layers.layer2], name: "Southern Australia" },
+    scene3: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer1, layers.layer2], name: "Kangaroo Island" },
+    scene4: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer], name: "Wildfires" },
+    scene5: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer, overlayLayers.malleeLayer], name: "Mallee" },
+    scene6: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer, overlayLayers.termiteLayer], name: "Termites" },
+    scene7: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer, overlayLayers.echidnaLayer], name: "Echidna" },
+    scene8: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer, overlayLayers.varanusLayer], name: "Goanna" },
+    scene9: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer, overlayLayers.malleeLayer,overlayLayers.termiteLayer,overlayLayers.echidnaLayer,overlayLayers.varanusLayer], name: "scene 7" }
 };          
 
 $('#storymap').storymap({
     scenes: scenes,
-    baselayer: layers.layer1,
+    baselayer: layers.layer3,
     legend: true,
     loader: true,
     flyto: true,
