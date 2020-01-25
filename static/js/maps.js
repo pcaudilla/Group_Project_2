@@ -92,7 +92,7 @@ var layers = {
     layer1: {
         layer: L.tileLayer(MAPBOX_URL, {
             attribution: ATTRIBUTION,
-            id: "mapbox.streets",
+            id: "mapbox.light",
             accessToken: API_KEY
         })
     },
@@ -129,20 +129,33 @@ var overlayLayers = {
     malleeLayer: {
         layer: L.heatLayer(malleeArray, {
             radius: 3,
-            blur: 3,
+            blur: 2,
             minOpacity: 100,
             maxZoom: 20,
             gradient: {
-                0.0: 'black',
-                1.0: 'black'
+                0.0: 'olivedrab',
+                1.0: 'olivedrab'
             }
         })
     },
 
     termiteLayer: {
         layer: L.heatLayer(termiteArray, {
-            radius: 3,
-            blur: 3,
+            radius: 10,
+            blur: 2,
+            minOpacity: 100,
+            maxZoom: 20,
+            gradient: {
+                0.0: 'brown',
+                1.0: 'brown'
+            }
+        })
+    },
+
+    echidnaLayer: {
+        layer: L.heatLayer(echidnaArray, {
+            radius: 7,
+            blur: 2,
             minOpacity: 100,
             maxZoom: 20,
             gradient: {
@@ -152,28 +165,15 @@ var overlayLayers = {
         })
     },
 
-    echidnaLayer: {
-        layer: L.heatLayer(echidnaArray, {
-            radius: 3,
-            blur: 3,
-            minOpacity: 100,
-            maxZoom: 20,
-            gradient: {
-                0.0: 'black',
-                1.0: 'black'
-            }
-        })
-    },
-    
     varanusLayer: {
         layer: L.heatLayer(varanusArray, {
-            radius: 3,
-            blur: 3,
+            radius: 7,
+            blur: 2,
             minOpacity: 100,
             maxZoom: 20,
             gradient: {
-                0.0: 'black',
-                1.0: 'black'
+                0.0: 'gray',
+                1.0: 'gray'
             }
         })
     },
@@ -181,15 +181,15 @@ var overlayLayers = {
 
 
 var scenes = {
-    scene1: { lat: -25.274398, lng: 133.775136, zoom: 4.5, layers: [layers.layer1, overlayLayers.heatLayerAUS], name: "Australia" },
-    scene2: { lat: -35.8177, lng: 137.05305, zoom: 8, layers: [layers.layer1], name: "Southern Australia" },
-    scene3: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1], name: "Kangaroo Island" },
-    scene4: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer], name: "Wildfires" },
-    scene5: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer], name: "Mallee" },
-    scene6: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.termiteLayer], name: "Termites" },
-    scene7: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.echidnaLayer], name: "Echidna" },
-    scene8: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.varanusLayer], name: "Goanna" },
-    scene9: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer,overlayLayers.termiteLayer,overlayLayers.echidnaLayer,overlayLayers.varanusLayer], name: "scene 7" }
+    scene1: { lat: -27.27439, lng: 120, zoom: 4.9, layers: [layers.layer1, overlayLayers.heatLayerAUS], name: "Australia" },
+    scene2: { lat: -35.8177, lng: 136.0531, zoom: 8, layers: [layers.layer1], name: "Southern Australia" },
+    scene3: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1], name: "Kangaroo Island" },
+    scene4: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer], name: "Wildfires" },
+    scene5: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer], name: "Mallee" },
+    scene6: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.termiteLayer], name: "Termites" },
+    scene7: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.echidnaLayer], name: "Echidna" },
+    scene8: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.varanusLayer], name: "Goanna" },
+    scene9: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer,overlayLayers.termiteLayer,overlayLayers.echidnaLayer,overlayLayers.varanusLayer], name: "Final" }
 };          
 
 $('#storymap').storymap({
