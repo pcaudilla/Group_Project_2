@@ -15,7 +15,6 @@ d3.csv(firePathAUS, function (data) {
         var latlng = L.latLng([lat, lng]);
         heatArrayAUS.push(latlng);
     }
-    console.log(heatArrayAUS);
 });
 
 
@@ -182,8 +181,8 @@ var overlayLayers = {
 
 var scenes = {
     scene1: { lat: -27.27439, lng: 120, zoom: 4.9, layers: [layers.layer1, overlayLayers.heatLayerAUS], name: "Australia" },
-    scene2: { lat: -35.8177, lng: 136.0531, zoom: 8, layers: [layers.layer1], name: "Southern Australia" },
-    scene3: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1], name: "Kangaroo Island" },
+    scene2: { lat: -35.8177, lng: 136.0531, zoom: 8, layers: [layers.layer1], name: "Kangaroo Island" },
+    scene3: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1], name: "PLants & Animals" },
     scene4: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer], name: "Wildfires" },
     scene5: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer], name: "Mallee" },
     scene6: { lat: -35.8177, lng: 136.92, zoom: 10.1, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.termiteLayer], name: "Termites" },
@@ -208,4 +207,5 @@ $('#storymap').storymap({
         basemap = this.baselayer.layer.addTo(map);
         return map;
     }
+
 });
