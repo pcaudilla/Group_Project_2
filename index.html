@@ -4,7 +4,7 @@
     <title>Wildfires and Wildlife on Kangaroo Island, Australia</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--add required stylesheets-->
+    <!--bootstrap stylesheet-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!--leaflet css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
@@ -17,25 +17,25 @@
     <!--Font-->
     <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
 
+    <!--css for webpage and for story map functionality-->
     <link rel="stylesheet" type="text/css" href="static/css/storymap.2.5.css">
 
-    <!--add required libraries-->
+    <!--Required libraries for leaflet-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
     <!--jquery and Popper-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
 
-    <!--boostrap-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!--leaflet.ajax for asynchronously adding geojson data-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
 
-    <!--story map plugin-->
+    <!--story map plugin javascript-->
     <script type="text/javascript" src="static/js/storymap.2.5.js"></script>
 </head>
 
 <body>
+    <!--navigation bar-->
     <header id="app" class="container">
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark storymap-navbar">
     
@@ -52,10 +52,12 @@
 
         </nav>
     </header>
+    <!--story map container-->
     <main id="storymap" class="container-fluid">
         <div class="row">
             <div class="col-sm-6 col-md-8 storymap-map"></div>
             <div class="col-sm-6 col-md-4 storymap-story">
+                <!--each story scene that the storymap will scroll through-->
                 <section data-scene="scene1" class="first_scene">
                     <h2>The Australia Fires</h2>
                     <br>
@@ -228,6 +230,7 @@
         </div>
     </main>
     
+    <!--javascript files-->
     <script type="text/javascript" src="static/js/leaflet-heat.js"></script>
     <script type="text/javascript" src="static/js/config.js"></script>
     <script type="text/javascript" src="static/js/maps.js"></script>

@@ -34,8 +34,16 @@ Storymap library
 
 ## Sketches & Inspiration
 
+<<<<<<< HEAD
 ![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/plan_sketch.jpg)
 ![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/sketch2.jpg)
+=======
+![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/sketch1.jpg)
+![sketch1](https://github.com/pcaudilla/Group_Project_2/tree/master/images/sketch2.jpg)
+
+
+## OPTIONAL Work load organization
+>>>>>>> 7ef3137adc99529be7fe1a139c1de8fe73376e2a
 
 
 
