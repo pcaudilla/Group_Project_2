@@ -34,6 +34,11 @@ h2 {
     font-weight: bold;
 }
 
+#species_image {
+    max-width: 100%;
+    height: auto;
+}
+
 .storymap-trigger {
     left: 0;
     margin-top: -10px;

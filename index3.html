@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <title>Endangered Species on Kangaroo Island, Australia</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--add required stylesheets-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <!--leaflet css-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+        <!--Font-->
+        <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    
+        <link rel="stylesheet" type="text/css" href="storymap.2.5.css">
+    
+        <!--add required libraries-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
+        <!--jquery and Popper-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    
+        <!--boostrap-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <!--leaflet.ajax for asynchronously adding geojson data-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js"></script>
+    
+        <!--story map plugin-->
+        <script src="storymap.2.5.js"></script>
+        
+       
+</head>
+
+<body>
+ <div id="app" class="container">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark storymap-navbar">
+   
+        <a class="navbar-brand" href="#">The Story of Kangaroo Island</a> 
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="javascript:window.scrollBy(0, $('section[data-scene=\'scene1\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);">Australia Fires</a></li>
+                <li class="nav-item"><a class="nav-link" href="javascript:window.scrollBy(0, $('section[data-scene=\'scene2\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);">Kangaroo Island</a></li>
+                <li class="nav-item"><a class="nav-link" href="references.html">References</a></li>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</div>
+
+    <div id="storymap" class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6 col-md-8 storymap-map"></div>
+            <div class="col-sm-6 col-md-4 storymap-story">
+                <section data-scene="scene1">
+                    <br><h2>The Australia Fires</h2>
+                    <br>
+                    <h5>Across Australia, at least 17.9 million acres have burned during this wildfire season.  Billions of plants and animals have been affected by the bushfires.  It is unclear how many have been killed and how many will be affected for generations.  Whole ecosystems may be permanently changed.</h5>
+                    <br>
+                    <p style="font-size: 0.9rem;font-style: italic;">
+                        <img style="display: block;" src="https://live.staticflickr.com/6062/6077304324_0f77a350ce_b.jpg" alt="Australia-13" id="species_image">
+                        <a href="https://www.flickr.com/photos/56408547@N08/6077304324">"Australia-13"</a>
+                        <span> by <a href="https://www.flickr.com/photos/56408547@N08">didkovskaya</a></span> is licensed under 
+                        <a href="https://creativecommons.org/licenses/by-nc/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-NC 2.0</a>
+                        <a href="https://creativecommons.org/licenses/by-nc/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;">
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" />
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" />
+                        </a>
+                    </p>
+                </section>
+                <section data-scene="scene2">
+                    <h2>Kangaroo Island</h2>
+                    <br>
+                    <h5>According to australia.com, Kangaroo Island is one of the best places in Australia to see wildlife.  The island is 8 miles off the coast of South Australia.</h5>
+                    <br>
+                    <p style="font-size: 0.9rem;font-style: italic;">
+                        <img style="display: block;" src="https://live.staticflickr.com/4626/39685917031_42d7be3c52_b.jpg" alt="KANGAROO ISLAND" id="species_image">
+                        <a href="https://www.flickr.com/photos/29908290@N06/39685917031">"KANGAROO ISLAND"</a>
+                        <span> by <a href="https://www.flickr.com/photos/29908290@N06">marcellosaponaro</a></span> is licensed under 
+                        <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY 2.0</a>
+                        <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;">
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" />
+                        </a>
+                    </p>
+                </section>
+                <section data-scene="scene3">
+                    <h2>Plants and Animals</h2>
+                    <br>
+                    <h5>A survey of plants and animals was completed in 1989 on Kangaroo Island.  The island supports 1,179 distinct plant taxa.  It is an island of many diverse and unique plants.  
+                        <br>
+                        <br>
+                        There are 6 amphibian, 20 reptile, 25 non-marine mammal, and 267 bird species.
+                        <br><br>
+                        <p style="font-size: 0.9rem;font-style: italic;">
+                            <img style="display: block;" src="https://farm5.staticflickr.com/4641/39152238152_901d16dbd8_b.jpg" alt="New Holland  honeyeater (Phylidonyris novaehollandiae)" id="species_image">
+                            <a href="https://www.flickr.com/photos/59293954@N00/39152238152">"New Holland  honeyeater (Phylidonyris novaehollandiae)"</a>
+                            <span> by <a href="https://www.flickr.com/photos/59293954@N00">sharloch</a></span> is licensed under 
+                            <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-NC-ND 2.0</a>
+                            <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;">
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nd_icon.svg" />
+                            </a>
+                        </p>    
+                </section>
+                <section data-scene="scene4">
+                    <h2>Kangaroo Island Wildfires</h2>
+                    <br>
+                    <h5>A third of Kangaroo Island has been burned by wildfire.  The following is a story of 4 species whose habitats are affected by the wildfires.</h5>
+                </section>
+                <section data-scene="scene5">
+                    <h2>Coastal White Mallee</h2>
+                    <br>
+                    <h5>The coastal white mallee (Eucalyptus diversifolia) was one of the most dominant plant species during the 1989 species survey.  Mallee is a term for eucalyptus trees that are multi-stemmed.  
+                        <br>
+                        <br>
+                        The coastal white mallee grows in dense patches and provides shelter for other native plants.  
+                        <br>
+                        <br>
+                        High intensity and frequent bushfires create conditions favorable to weed and rabbit invasion in mallee forest stands.</h5>
+                        <br>
+                    <p style="font-size: 0.9rem;font-style: italic;">
+                        <img style="display: block;" src="https://live.staticflickr.com/8480/8198648606_e07061cffc_b.jpg" alt="Eucalyptus diversifolia subsp. diversifolia (Coastal White Mallee)" id="species_image">
+                        <a href="https://www.flickr.com/photos/32005048@N06/8198648606">"Eucalyptus diversifolia subsp. diversifolia (Coastal White Mallee)"</a>
+                        <span> by <a href="https://www.flickr.com/photos/32005048@N06">Arthur Chapman</a></span> is licensed under 
+                        <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-NC-SA 2.0</a>
+                        <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;">
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" />
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" />
+                            <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-sa_icon.svg" />
+                        </a>
+                    </p>
+                </section>
+                <section data-scene="scene6">
+                    <h2>Mound-building Termites</h2>
+                    <br>
+                    <h5>There are approximately 300 species of termite in Australia (most don't eat houses).  The snouted termite species, Nasutitermes exitiosus, builds dome-shaped mounds that are 30-75 cm high.     
+                        <br>
+                        <br>
+                        They usually build their domes near eucalyptus trees. 
+                        <br>
+                        <br>
+                        NOTE: the database did not have many observations of this species.  The points may not reflect their overall distribution on the island.</h5>
+                        <p style="font-size: 0.9rem;font-style: italic;">
+                            <img style="display: block;" src="https://farm5.staticflickr.com/4279/34516421724_f8ea671fd6_b.jpg" alt="Dusky woodswallow feeding on termite alates" id="species_image">
+                            <a href="https://www.flickr.com/photos/63479603@N00/34516421724">"Dusky woodswallow feeding on termite alates"</a>
+                            <span> by <a href="https://www.flickr.com/photos/63479603@N00">jeans_Photos</a></span> is licensed under 
+                            <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY 2.0</a>
+                            <a href="https://creativecommons.org/licenses/by/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;">
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" />
+                            </a>
+                        </p>
+                </section>
+                <section data-scene="scene7">
+                    <h2>Kangaroo Island Echidna</h2>
+                    <br>
+                    <h5>The Kangaroo Island echidna (Tachyglossus aculeatus ssp. multiaculeatus) is a subspecies of the short-beaked echidna.  Short-beaked echidnas typically eat termites, as well as other insects.  
+                        <br>
+                        <br>
+                        They are considered an incredibly important species for ecosystem health because they rework the soil through their digging activity.    
+                        <br>
+                        <br>    
+                        Echidna "lay" eggs and the egg develops in a small pouch on the mother.  When the young echidna hatches, it is called a "puggle".  The puggle rides on the mother as she forages for food.  Sometimes, if the puggle gets too heavy, the mother will dig a cradle in a termite mound for the puggle to rest in while she forages.  Termites provide food and shelter.
+                        <br>
+                        <br>
+                        Puggles can sometimes be found in the same termite mounds as the eggs and hatchlings of the Rosenberg's monitor.</h5>
+                        <br>
+                        <p style="font-size: 0.9rem;font-style: italic;">
+                            <img style="display: block;" src="https://farm3.staticflickr.com/2318/4509954722_a9e7bb8457_b.jpg" alt="Tachyglossus aculeatus aculeatus (Short-beaked Echidna or Spiny Anteater) - captive" id="species_image">
+                            <a href="https://www.flickr.com/photos/32005048@N06/4509954722">"Tachyglossus aculeatus aculeatus (Short-beaked Echidna or Spiny Anteater) - captive"</a>
+                            <span> by <a href="https://www.flickr.com/photos/32005048@N06">Arthur Chapman</a></span> is licensed under 
+                            <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-NC-SA 2.0</a>
+                            <a href="https://creativecommons.org/licenses/by-nc-sa/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;">
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-sa_icon.svg" />
+                            </a>
+                        </p>
+                </section>
+                <section data-scene="scene8">
+                    <h2>Rosenberg's Monitor</h2>
+                    <br>
+                    <h5>Termite mounds are critical for the Rosenberg's goanna (Varanus rosenbergi) as females lay their eggs in the mounds (the young dig themselves out).  
+                        <br>
+                        <br>
+                        They are an average of 4.2 feet long, and are largest native predator on Kangaroo Island.  They feed on birds, mammals, many invertebrates, amphibians and other reptiles.
+                        <br>
+                        <br>
+                        This species was declining on mainland Australia before this wildlife season.  Kangaroo Island is/was their last stronghold.</h5>
+                        <br>
+                        <p style="font-size: 0.9rem;font-style: italic;">
+                            <img style="display: block;" src="https://farm9.staticflickr.com/8625/15883718197_b0dc2f6f85_b.jpg" alt="Rosenberg Goanna" id="species_image">
+                            <a href="https://www.flickr.com/photos/56707737@N00/15883718197">"Rosenberg Goanna"</a>
+                            <span> by <a href="https://www.flickr.com/photos/56707737@N00">apurdam (Andrew)</a></span> is licensed under 
+                            <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=html" style="margin-right: 5px;">CC BY-NC-ND 2.0</a>
+                            <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/?ref=ccsearch&atype=html" target="_blank" rel="noopener noreferrer" style="display: inline-block;white-space: none;margin-top: 2px;margin-left: 3px;height: 22px !important;">
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-by_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nc_icon.svg" />
+                                <img style="height: inherit;margin-right: 3px;display: inline-block;" src="https://search.creativecommons.org/static/img/cc-nd_icon.svg" />
+                            </a>
+                        </p>
+                </section>
+                <section data-scene="scene9">
+                    <h2>What can I do?</h2>
+                    <br>
+                    <h5>Recognize the importance of whole ecosystem health.  Species rely on other species to survive, and entire ecosystems need our support. 
+                        <br>
+                        <br>
+                        If you protect the mallee, if you protect the termite, you protect the echidna, and you protect the goanna.
+                        <br>
+                        <br>
+                        If you are interested in donating, we have included the links to three groups related to Kangaroo Island on the references page.</h5>
+                </section>
+            </div>
+    
+        </div>
+    </div>
+    <script type="text/javascript">
+    
+        var layers = {
+            layer1: {
+                layer: L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGNhdWRpbGxhIiwiYSI6ImNrNHp3cDRiejBmeHcza281ZTF5ZG5nMGkifQ.4Q3FJDweXD21tj5DkS2TyQ'),
+                attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
+                id: "mapbox://styles/drusbury/ck5g5nug90ajz1jqmzcvyxix1",
+                legend: '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>'
+            },
+            layer2: {
+                layer: L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGNhdWRpbGxhIiwiYSI6ImNrNHp3cDRiejBmeHcza281ZTF5ZG5nMGkifQ.4Q3FJDweXD21tj5DkS2TyQ'),
+                attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
+                id: "mapbox://styles/drusbury/ck5g5nug90ajz1jqmzcvyxix1",
+                legend: '<i style="background: orange; opacity: 0.5"></i><p><b>legend 2</b></p>'
+            },
+            layer3: {
+                layer: L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGNhdWRpbGxhIiwiYSI6ImNrNHp3cDRiejBmeHcza281ZTF5ZG5nMGkifQ.4Q3FJDweXD21tj5DkS2TyQ'),
+                attribution: "Map data &copy; <a href=\"http://openstreetmap.org\">OpenStreetMap</a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"http://mapbox.com\">Mapbox</a>",
+                id: "mapbox://styles/drusbury/ck5g5nug90ajz1jqmzcvyxix1",
+                legend: '<i style="background: black; opacity: 0.5"></i><p><b>legend 1</b></p>'
+            }
+        };
+    
+        var scenes = {
+            scene1: {lat: -25.274398, lng: 133.775136, zoom: 4.5, layers: [layers.layer2], name: "Australia"},
+            scene2: {lat: -35.8177, lng: 137.05305, zoom: 8, layers: [layers.layer2], name: "Southern Australia"},
+            scene3: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, layers.layer2], name: "Kangaroo Island"},
+            scene4: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 4"},
+            scene5: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 5"},
+            scene6: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 6"},
+            scene7: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 7"},
+            scene8: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 7"},
+            scene9: {lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer2], name: "scene 7"}
+        };
+    
+        $('#storymap').storymap({
+            scenes: scenes,
+            baselayer: layers.layer3,
+            legend: true,
+            loader: true,
+            flyto: true,
+            credits:  "Build with <i class='material-icons' style='color: red; font-size: 10px;'>favorite</i> from Bo Zhao",
+            scalebar: true,
+            scrolldown: true,
+            progressline: true,
+            navwidget: true,
+            createMap: function () {
+                var map = L.map($(".storymap-map")[0], {zoomControl: false}).setView([44, -120], 7);
+                basemap = this.baselayer.layer.addTo(map);
+                return map;
+            }
+        });
+
+    </script>
+</body>
+</html>

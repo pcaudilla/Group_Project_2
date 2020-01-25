@@ -1,0 +1,42 @@
+.content {
+  background-color: whitesmoke;
+}
+
+.background {
+ padding-top: 30px; 
+}
+
+.col-md-8 {
+  background-color: white;
+  padding: 20px; 
+}
+
+.col-md-4 {
+  background-color: white; 
+  padding: 10px;
+}
+
+.row h2 {
+  color: gray;
+}
+
+.page-footer {
+  background-color: gray;
+  color: white;
+}
+
+.navbar-brand {
+  font-size: 30px;
+}
+
+.row {
+    background-color: white;
+}
+
+.col-md-12 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+

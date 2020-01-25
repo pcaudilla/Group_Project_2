@@ -221,7 +221,7 @@
 
 
 
-               //$(".navbar-header").after("<div class='collapse navbar-collapse nav navbar-nav navbar-right storymap-navbar'>");
+               $(".navbar-header").after("<div class='collapse navbar-collapse nav navbar-nav navbar-right storymap-navbar'>");
 
 
                 $.each(sections, function (key, element) {
@@ -235,7 +235,7 @@
 
                     scrollScript = "javascript:window.scrollBy(0, $('section[data-scene=\\'" + section.data('scene') + "\\']').offset().top - $(window).scrollTop() - $('.storymap-navbar').height() - 30);";
 
-                    // $(".storymap-navbar").append('<li><a title="' + sceneName + '" href="' + scrollScript + '" >' + sceneName + '</a></li>');
+                    $(".storymap-navbar").append('<li><a title="' + sceneName + '" href="' + scrollScript + '" >' + sceneName + '</a></li>');
 
 
                     $(".navbar-nav").append('<li class="nav-item"><a class="nav-link"' + '" href="' + scrollScript + '" >' + sceneName + '</a></li>');
