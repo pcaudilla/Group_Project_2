@@ -1,7 +1,9 @@
-var heatArray = []
-var heatArrayAUS = []
-var malleeArray = []
-
+var heatArray = [];
+var heatArrayAUS = [];
+var malleeArray = [];
+var echidnaArray = [];
+var termiteArray = [];
+var varanusArray = [];
 
 d3.csv(firePathAUS, function (data) {
 
@@ -42,6 +44,48 @@ d3.csv(malleeObs, function (data) {
     }
 
 });
+
+d3.csv(termiteObs, function (data) {
+
+    for (var i = 0; i < data.length; i++) {
+        
+        var lat = +data[i].Latitude;
+        var lng = +data[i].Longitude;
+
+        var latlng = L.latLng([lat, lng]);
+        termiteArray.push(latlng);
+    }
+
+});
+
+
+d3.csv(echidnaObs, function (data) {
+
+    for (var i = 0; i < data.length; i++) {
+        
+        var lat = +data[i].Latitude;
+        var lng = +data[i].Longitude;
+
+        var latlng = L.latLng([lat, lng]);
+        echidnaArray.push(latlng);
+    }
+
+});
+
+
+d3.csv(varanusObs, function (data) {
+
+    for (var i = 0; i < data.length; i++) {
+        
+        var lat = +data[i].Latitude;
+        var lng = +data[i].Longitude;
+
+        var latlng = L.latLng([lat, lng]);
+        varanusArray.push(latlng);
+    }
+
+});
+
 
 
 var layers = {
@@ -94,6 +138,45 @@ var overlayLayers = {
             }
         })
     },
+
+    termiteLayer: {
+        layer: L.heatLayer(termiteArray, {
+            radius: 3,
+            blur: 3,
+            minOpacity: 100,
+            maxZoom: 20,
+            gradient: {
+                0.0: 'black',
+                1.0: 'black'
+            }
+        })
+    },
+
+    echidnaLayer: {
+        layer: L.heatLayer(echidnaArray, {
+            radius: 3,
+            blur: 3,
+            minOpacity: 100,
+            maxZoom: 20,
+            gradient: {
+                0.0: 'black',
+                1.0: 'black'
+            }
+        })
+    },
+    
+    varanusLayer: {
+        layer: L.heatLayer(varanusArray, {
+            radius: 3,
+            blur: 3,
+            minOpacity: 100,
+            maxZoom: 20,
+            gradient: {
+                0.0: 'black',
+                1.0: 'black'
+            }
+        })
+    },
 };
 
 
@@ -103,11 +186,11 @@ var scenes = {
     scene3: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1], name: "Kangaroo Island" },
     scene4: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer], name: "Wildfires" },
     scene5: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer], name: "Mallee" },
-    scene6: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer], name: "scene 6" },
-    scene7: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer], name: "scene 7" },
-    scene8: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer], name: "scene 7" },
-    scene9: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer], name: "scene 7" }
-};
+    scene6: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.termiteLayer], name: "Termites" },
+    scene7: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.echidnaLayer], name: "Echidna" },
+    scene8: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.varanusLayer], name: "Goanna" },
+    scene9: { lat: -35.8177, lng: 137, zoom: 9.55, layers: [layers.layer1, overlayLayers.heatLayer, overlayLayers.malleeLayer,overlayLayers.termiteLayer,overlayLayers.echidnaLayer,overlayLayers.varanusLayer], name: "scene 7" }
+};          
 
 $('#storymap').storymap({
     scenes: scenes,
