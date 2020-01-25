@@ -121,14 +121,14 @@ var overlayLayers = {
             minOpacity: 2,
             //maxZoom: 20,
             gradient: {
-                0.8: 'orange',
+                0.7: 'orange',
                 1.0: 'red'
             }
         })
     },
     malleeLayer: {
         layer: L.heatLayer(malleeArray, {
-            radius: 3,
+            radius: 4,
             blur: 2,
             minOpacity: 100,
             maxZoom: 20,
@@ -141,13 +141,13 @@ var overlayLayers = {
 
     termiteLayer: {
         layer: L.heatLayer(termiteArray, {
-            radius: 10,
+            radius: 15,
             blur: 2,
             minOpacity: 100,
             maxZoom: 20,
             gradient: {
-                0.0: 'brown',
-                1.0: 'brown'
+                0.0: 'saddlebrown',
+                1.0: 'saddlebrown'
             }
         })
     },
