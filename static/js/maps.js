@@ -15,7 +15,6 @@ d3.csv(firePathAUS, function (data) {
         var latlng = L.latLng([lat, lng]);
         heatArrayAUS.push(latlng);
     }
-    console.log(heatArrayAUS);
 });
 
 
@@ -134,28 +133,41 @@ var overlayLayers = {
             minOpacity: 2,
             //maxZoom: 20,
             gradient: {
-                0.8: 'orange',
+                0.7: 'orange',
                 1.0: 'red'
             }
         })
     },
     malleeLayer: {
         layer: L.heatLayer(malleeArray, {
-            radius: 3,
-            blur: 3,
+            radius: 4,
+            blur: 2,
             minOpacity: 100,
             maxZoom: 20,
             gradient: {
-                0.0: 'black',
-                1.0: 'black'
+                0.0: 'olivedrab',
+                1.0: 'olivedrab'
             }
         })
     },
 
     termiteLayer: {
         layer: L.heatLayer(termiteArray, {
-            radius: 3,
-            blur: 3,
+            radius: 15,
+            blur: 2,
+            minOpacity: 100,
+            maxZoom: 20,
+            gradient: {
+                0.0: 'saddlebrown',
+                1.0: 'saddlebrown'
+            }
+        })
+    },
+
+    echidnaLayer: {
+        layer: L.heatLayer(echidnaArray, {
+            radius: 7,
+            blur: 2,
             minOpacity: 100,
             maxZoom: 20,
             gradient: {
@@ -165,28 +177,15 @@ var overlayLayers = {
         })
     },
 
-    echidnaLayer: {
-        layer: L.heatLayer(echidnaArray, {
-            radius: 3,
-            blur: 3,
-            minOpacity: 100,
-            maxZoom: 20,
-            gradient: {
-                0.0: 'black',
-                1.0: 'black'
-            }
-        })
-    },
-    
     varanusLayer: {
         layer: L.heatLayer(varanusArray, {
-            radius: 3,
-            blur: 3,
+            radius: 7,
+            blur: 2,
             minOpacity: 100,
             maxZoom: 20,
             gradient: {
-                0.0: 'black',
-                1.0: 'black'
+                0.0: 'gray',
+                1.0: 'gray'
             }
         })
     },
@@ -203,6 +202,7 @@ var scenes = {
     scene7: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer, overlayLayers.echidnaLayer], name: "Echidna" },
     scene8: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer, overlayLayers.varanusLayer], name: "Goanna" },
     scene9: { lat: -35.8177, lng: 136.9, zoom: 9.55, layers: [layers.layer2, overlayLayers.heatLayer, overlayLayers.malleeLayer,overlayLayers.termiteLayer,overlayLayers.echidnaLayer,overlayLayers.varanusLayer], name: "scene 7" }
+
 };          
 
 $('#storymap').storymap({
@@ -221,4 +221,5 @@ $('#storymap').storymap({
         basemap = this.baselayer.layer.addTo(map);
         return map;
     }
+
 });
