@@ -31,7 +31,7 @@ https://www.ala.org.au/
 ## Project Track & Stack
 * Downloaded fire data CSV files (from 1/1/2019 to 1/13/2020)
 * Downloaded animal habitat CSV files from Atlas of Living Australia
-* Used Storymap library (https://github.com/jakobzhao/storymap)
+* Used Storymap library (https://github.com/jakobzhao/storymap) and integrate code for fire and animal data to pre-existing code of the library
 * Created heatmap for fire data and habitats for each animals, and overlayed one on top of the other 
 * Created a website that tells the story and a references page that has links to sources as well as places for donations
 
